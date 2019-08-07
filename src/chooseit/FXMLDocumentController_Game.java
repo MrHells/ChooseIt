@@ -39,7 +39,7 @@ public class FXMLDocumentController_Game implements Initializable {
     private User actualUser = null;
     
     public void cadastra(ActionEvent event) {
-        Register.registerUser(txtName.getText(), txtAge.getText());
+        
     }
     
     public void logar(ActionEvent event) {
@@ -52,10 +52,7 @@ public class FXMLDocumentController_Game implements Initializable {
     }
     
     public void showData(ActionEvent event) {
-        if(actualUser != null){
-            System.out.println("Age: " + actualUser.getAge());
-            System.out.println("Name: "+ actualUser.getName());
-        }
+        
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

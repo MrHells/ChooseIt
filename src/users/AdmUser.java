@@ -10,9 +10,10 @@ package users;
  * @author Emili
  */
 public class AdmUser extends User {
-
-    public AdmUser(String name, String age) {
-        super(name, age);
+    private String email;
+    
+    public AdmUser(String Nickname, String name, String password) {
+        super(Nickname, name, password);
     }
     
 }

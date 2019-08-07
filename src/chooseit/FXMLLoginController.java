@@ -5,9 +5,16 @@
  */
 package chooseit;
 
+import databases.userDAO;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import tools.Login;
 
 /**
  * FXML Controller class
@@ -16,6 +23,13 @@ import javafx.fxml.Initializable;
  */
 public class FXMLLoginController implements Initializable {
 
+    @FXML
+    private Button login;
+    @FXML
+    private TextField txtNickname;
+    @FXML
+    private PasswordField txtPass;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +37,11 @@ public class FXMLLoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    public  void tryLogin(ActionEvent event) {
+        //System.out.println(txtNickname.getText());
+        Login.tryLogin(txtPass.getText(), txtNickname.getText());
+    }
     
 }

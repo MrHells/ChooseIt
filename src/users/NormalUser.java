@@ -10,9 +10,8 @@ package users;
  * @author Emili
  */
 public class NormalUser extends User {
-
-    public NormalUser(String name, String age) {
-        super(name, age);
-    }
     
+    public NormalUser(String Nickname, String name, String password) {
+        super(Nickname, name, password);
+    }
 }

@@ -12,12 +12,16 @@ import java.io.Serializable;
  * @author Emili
  */
 public class User implements Serializable {
-    String name;
-    String age;
-    public User(String name, String age) {
+    private String Nickname;
+    private String name;
+    private String password;
+    
+    public User(String Nickname, String name, String password) {
+        this.Nickname = Nickname;
         this.name = name;
-        this.age = age;
+        this.password = password;
     }
+
 
     public String getName() {
         return name;
@@ -27,12 +31,20 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public String getAge() {
-        return age;
+    public String getNickname() {
+        return Nickname;
     }
 
     public void setAge(String age) {
-        this.age = age;
+        this.Nickname = Nickname;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
     
 }

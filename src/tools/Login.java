@@ -5,6 +5,7 @@
  */
 package tools;
 
+import databases.userDAO;
 import users.User;
 
 /**
@@ -14,12 +15,11 @@ import users.User;
 public class Login {
     public static User tryLogin(String senha, String userIdentification){
         User bufferUser;
-        
-        bufferUser = Archive.read("users");
-        if(bufferUser.getName().equals(senha)){
-            return bufferUser;
-        }
-        
+        userDAO u = new userDAO();
+        String a = u.buscarUsuarios(userIdentification, senha);
+        System.out.println(a);
         return null;
+    
     }
+    
 }

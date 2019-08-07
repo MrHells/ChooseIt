@@ -18,11 +18,11 @@ import java.util.logging.Logger;
  * @author fhill
  */
 public class ConectionMaker {
-    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+ private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/chooseit_database?useTimezone=true&serverTimezone=UTC";
     private static final String USER = "root";
     private static final String PASSWORD = "pass123";
- 
+
     public static Connection getConexao() throws SQLException {
         try {
             Class.forName(DRIVER);
@@ -32,6 +32,7 @@ public class ConectionMaker {
             throw new SQLException(e.getMessage());
         }
     }
+    
     
     public static void closeConnection(Connection conection){
         try {
@@ -64,5 +65,5 @@ public class ConectionMaker {
             Logger.getLogger(ConectionMaker.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

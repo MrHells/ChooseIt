@@ -12,5 +12,6 @@
         <Button fx:id="btnRegister" layoutX="120.0" layoutY="300.0" onAction="#register" prefHeight="63.0" prefWidth="114.0" style="-fx-border-color: black; -fx-background-color: grey;" text="Register" textFill="WHITE" />
       <Button fx:id="btnLogin" layoutX="120.0" layoutY="372.0" mnemonicParsing="false" onAction="#logar" prefHeight="63.0" prefWidth="114.0" style="-fx-border-color: black; -fx-background-color: grey;" text="login" textFill="WHITE" />
       <Button fx:id="btnStart" layoutX="120.0" layoutY="229.0" onAction="#start" prefHeight="63.0" prefWidth="114.0" style="-fx-border-color: black; -fx-background-color: grey;" text="Get Started" textFill="WHITE" />
+      <Button fx:id="btnBDC" layoutX="40.0" layoutY="41.0" mnemonicParsing="false" onAction="#bdC" prefHeight="31.0" prefWidth="140.0" text="testConnection" />
     </children>
 </AnchorPane>
