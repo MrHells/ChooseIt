@@ -21,7 +21,7 @@ import users.User;
  */
 public class userDAO {
 
-    private Connection con = null;
+    private static Connection con = null;
 
     public static void saveUser(User user) throws SQLException {
         Connection con = ConnectionFactory.getConnection();
@@ -68,8 +68,8 @@ public class userDAO {
         return null;
     }
     
-    public boolean buscaTipoUser(String Nickname) throws SQLException{
-        String sql = "SELECT Nickname, Name, id_user, Password FROM chooseit_database.user WHERE Nickname = '"+Nickname+"'";
+    public static boolean verifyExistence(String Nickname) throws SQLException{
+        String sql = "SELECT Nickname Password FROM chooseit_database.user WHERE Nickname = '"+Nickname+"'";
         try {
             con = (new ConnectionFactory()).getConnection();
         } catch (SQLException ex) {
@@ -78,6 +78,8 @@ public class userDAO {
         
         try (PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql)){
             ResultSet rs = stmt.executeQuery();
+            System.out.println(rs);
+            System.out.println(rs.getString("Nickname"));
             if(rs == null){
                 return false;
             }

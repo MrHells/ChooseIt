@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.InputMethodEvent;
 import tools.Login;
 
 /**
@@ -42,6 +43,10 @@ public class FXMLLoginController implements Initializable {
     public  void tryLogin(ActionEvent event) {
         //System.out.println(txtNickname.getText());
         Login.tryLogin(txtPass.getText(), txtNickname.getText());
+    }
+
+    @FXML
+    private void verifyText(InputMethodEvent event) {
     }
     
 }
