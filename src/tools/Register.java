@@ -14,20 +14,19 @@ import users.User;
  * @author Emili
  */
 public class Register {
-    private static final int nameMax = 3;
-    private static final int nicknameMax = 16;
-    private static final int nicknameMin = 3;
+    private static final int NAME_MAX = 20;
+    private static final int NAME_MIN = 3;
+    private static final int NICKNAME_MAX = 16;
+    private static final int NICKNAME_MIN = 3;
+    
     public static void registerUser(String Nickname, String name, String password) throws SQLException{
         userDAO u = new userDAO();
-        if(testText(Nickname, nicknameMin, nicknameMax)){
-            boolean existence = userDAO.verifyExistence( Nickname);
-            if(existence){
+        if(testText(Nickname, NICKNAME_MIN, NICKNAME_MAX)){
+            if(!userDAO.verifyExistence(Nickname)){
                 System.out.println("yeah");
+                //userDAO.saveUser(new User(Nickname, name, password));
             }
-//userDAO.saveUser(new User(Nickname, name, password));
-            
         }
-        
     }
     public static boolean testText(String text, int minCharacter, int maxCharacter){
         if(!testEspecialCharacteres(text)){
@@ -38,8 +37,9 @@ public class Register {
 
     public static boolean testEspecialCharacteres(String text){
         for(int i = 0; i < text.length(); i++){
-            if(!Character.isLetter(text.charAt(i)) && !Character.isDigit(text.charAt(i))){
-            } else {
+            if(text.charAt(i) == '_'){
+                continue;
+            }else if(Character.isLetter(text.charAt(i)) || Character.isDigit(text.charAt(i))){
                 continue;
             }
             return false;

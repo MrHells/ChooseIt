@@ -40,6 +40,7 @@ public class userDAO {
         } catch (SQLException ex) {
             System.err.println("Erro " + ex);
             
+            
         } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -69,7 +70,8 @@ public class userDAO {
     }
     
     public static boolean verifyExistence(String Nickname) throws SQLException{
-        String sql = "SELECT Nickname Password FROM chooseit_database.user WHERE Nickname = '"+Nickname+"'";
+        String sql = "SELECT Nickname FROM chooseit_database.user WHERE Nickname = '"+Nickname+"'";
+        boolean r = false;
         try {
             con = (new ConnectionFactory()).getConnection();
         } catch (SQLException ex) {
@@ -78,15 +80,14 @@ public class userDAO {
         
         try (PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql)){
             ResultSet rs = stmt.executeQuery();
-            System.out.println(rs);
-            System.out.println(rs.getString("Nickname"));
-            if(rs == null){
-                return false;
+            if(rs.next()){ 
+                System.out.println("I");
+                return true;
             }
-
+            
         } catch (SQLException ex) {
-            System.err.println("Erro " + ex);
+            System.err.println(ex);
         }
-        return true;
+        return r;
     }
 }

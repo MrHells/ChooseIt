@@ -35,7 +35,7 @@ public class User implements Serializable {
         return Nickname;
     }
 
-    public void setAge(String age) {
+    public void setNickname(String Nickname) {
         this.Nickname = Nickname;
     }
 
