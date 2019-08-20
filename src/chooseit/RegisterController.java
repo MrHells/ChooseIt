@@ -23,7 +23,7 @@ import tools.Register;
  *
  * @author fhill
  */
-public class FXMLRegister implements Initializable {
+public class RegisterController implements Initializable {
 
     @FXML
     private Button btnCadastro;
@@ -50,7 +50,11 @@ public class FXMLRegister implements Initializable {
 
     @FXML
     private void cadastra(ActionEvent event) throws SQLException {
-        Register.registerUser(txtNickname.getText(), txtName.getText(), ptxtPassword.getText());
+        if(ptxtPassword.getText().equals(ptxtConfirmPassword.getText())){
+            Register.registerUser(txtNickname.getText(), txtName.getText(), ptxtPassword.getText());
+        }else{
+            System.out.println("Pau");
+        }
     }
     
 }

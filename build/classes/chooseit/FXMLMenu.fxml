@@ -7,7 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="465.0" prefWidth="354.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.FXMLDocumentController_Menu">
+<AnchorPane id="AnchorPane" prefHeight="465.0" prefWidth="354.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.MenuController">
     <children>
         <Button fx:id="btnRegister" layoutX="120.0" layoutY="300.0" onAction="#register" prefHeight="63.0" prefWidth="114.0" style="-fx-border-color: black; -fx-background-color: grey;" text="Register" textFill="WHITE" />
       <Button fx:id="btnLogin" layoutX="120.0" layoutY="372.0" mnemonicParsing="false" onAction="#logar" prefHeight="63.0" prefWidth="114.0" style="-fx-border-color: black; -fx-background-color: grey;" text="login" textFill="WHITE" />

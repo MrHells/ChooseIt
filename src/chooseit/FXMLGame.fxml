@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.GameController">
     <children>
       <Button fx:id="btnYes" layoutX="119.0" layoutY="249.0" mnemonicParsing="false" onAction="#BtnYesAction" prefHeight="57.0" prefWidth="104.0" text="Sim" wrapText="true" />
       <Button fx:id="btnNo" layoutX="443.0" layoutY="249.0" mnemonicParsing="false" onAction="#BtnNoAction" prefHeight="57.0" prefWidth="104.0" text="Não" wrapText="true" />

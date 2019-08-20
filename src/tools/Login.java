@@ -13,13 +13,13 @@ import users.User;
  * @author Emili
  */
 public class Login {
-    public static User tryLogin(String senha, String userIdentification){
-        User bufferUser;
+    public static User tryLogin(String senha, String Nickname){
+        
         userDAO u = new userDAO();
-        String a = u.buscarUsuarios(userIdentification, senha);
+        String a = u.buscarUsuarios(Nickname, senha);
+        
         System.out.println(a);
-        return null;
-    
+        
+        return new User(Nickname, senha, a, 0);
     }
-    
 }

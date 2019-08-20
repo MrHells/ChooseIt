@@ -24,7 +24,7 @@ public class Register {
         if(testText(Nickname, NICKNAME_MIN, NICKNAME_MAX)){
             if(!userDAO.verifyExistence(Nickname)){
                 System.out.println("yeah");
-                //userDAO.saveUser(new User(Nickname, name, password));
+                userDAO.saveUser(new User(Nickname, name, password));
             }
         }
     }

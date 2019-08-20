@@ -15,14 +15,18 @@ public class User implements Serializable {
     private String Nickname;
     private String name;
     private String password;
-    
+    private int id;
+    public User(String Nickname, String name, String password, int id) {
+        this.Nickname = Nickname;
+        this.name = name;
+        this.password = password;
+        this.id = id;
+    }
     public User(String Nickname, String name, String password) {
         this.Nickname = Nickname;
         this.name = name;
         this.password = password;
     }
-
-
     public String getName() {
         return name;
     }

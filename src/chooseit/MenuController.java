@@ -32,7 +32,7 @@ import users.User;
  *
  * @author Emili
  */
-public class FXMLDocumentController_Menu implements Initializable {
+public class MenuController implements Initializable {
 
     @FXML
     private Button btnLogin, btnRegister, btnStart;
@@ -55,7 +55,7 @@ public class FXMLDocumentController_Menu implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -71,7 +71,7 @@ public class FXMLDocumentController_Menu implements Initializable {
             stage.show();
 
         } catch (IOException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

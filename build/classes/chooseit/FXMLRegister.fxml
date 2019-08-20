@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.FXMLRegister">
+<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.RegisterController">
     <children>
         <Button fx:id="btnCadastro" layoutX="107.0" layoutY="231.0" onAction="#cadastra" prefHeight="60.0" prefWidth="103.0" text="Register" />
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />

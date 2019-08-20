@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="236.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.FXMLLoginController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="217.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.LoginController">
    <children>
-      <Button fx:id="login" layoutX="156.0" layoutY="194.0" mnemonicParsing="false" onAction="#tryLogin" text="Login" />
-      <TextField fx:id="txtNickname" layoutX="9.0" layoutY="24.0" onInputMethodTextChanged="#verifyText" prefHeight="31.0" prefWidth="358.0" promptText="Nickname" />
-      <PasswordField fx:id="txtPass" layoutX="10.0" layoutY="67.0" prefHeight="31.0" prefWidth="358.0" promptText="Password" />
+      <Button layoutX="291.0" layoutY="159.0" mnemonicParsing="false" onAction="#tryLogin" prefHeight="44.0" prefWidth="81.0" text="Login" />
+      <TextField fx:id="txtNickname" layoutX="10.0" layoutY="14.0" prefHeight="31.0" prefWidth="367.0" promptText="Nickname" />
+      <PasswordField fx:id="ptxtPass" layoutX="10.0" layoutY="53.0" prefHeight="31.0" prefWidth="367.0" promptText="Password" />
    </children>
 </AnchorPane>

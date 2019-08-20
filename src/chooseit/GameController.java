@@ -10,20 +10,19 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
  * @author fhill
  */
-public class FXMLLoginController implements Initializable {
+public class GameController implements Initializable {
 
     @FXML
-    private TextField txtNickname;
+    private Button btnYes;
     @FXML
-    private PasswordField ptxtPass;
+    private Button btnNo;
 
     /**
      * Initializes the controller class.
@@ -34,7 +33,11 @@ public class FXMLLoginController implements Initializable {
     }    
 
     @FXML
-    private void tryLogin(ActionEvent event) {
+    private void BtnYesAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void BtnNoAction(ActionEvent event) {
     }
     
 }
