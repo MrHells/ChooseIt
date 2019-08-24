@@ -5,7 +5,7 @@
  */
 package chooseit;
 
-import databases.userDAO;
+import databases.UserDAO;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -47,6 +47,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void verifyText(InputMethodEvent event) {
+        
     }
     
 }

@@ -5,7 +5,7 @@
  */
 package tools;
 
-import databases.userDAO;
+import databases.UserDAO;
 import users.User;
 
 /**
@@ -15,7 +15,8 @@ import users.User;
 public class Login {
     public static User tryLogin(String senha, String Nickname){
         
-        userDAO u = new userDAO();
+        UserDAO u = new UserDAO();
+        
         String a = u.buscarUsuarios(Nickname, senha);
         
         System.out.println(a);

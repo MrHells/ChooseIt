@@ -9,24 +9,29 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import users.User;
 
 /**
  *
- * @author fhill
+ * @author tecnica
  */
-public class AskDAO {
+public class UserDAO {
+
     private static Connection con = null;
 
-    public static void saveAsk(User user) throws SQLException {
+    public static void saveUser(User user) throws SQLException {
         Connection con = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO ask (statement, ) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO user (nickname, name, password, how_much_answered) VALUES (?,?,?,?)";
         System.out.println("a");
         PreparedStatement stmt = null;
+
         try {
             stmt = (PreparedStatement) con.prepareStatement(sql);
+
             stmt.setString(1, user.getNickname() );
             stmt.setString(2, user.getName());
             stmt.setString(3, user.getPassword());
@@ -82,5 +87,4 @@ public class AskDAO {
         }
         return r;
     }
-
 }

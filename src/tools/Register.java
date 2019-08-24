@@ -5,7 +5,7 @@
  */
 package tools;
 
-import databases.userDAO;
+import databases.UserDAO;
 import java.sql.SQLException;
 import users.User;
 
@@ -20,11 +20,11 @@ public class Register {
     private static final int NICKNAME_MIN = 3;
     
     public static void registerUser(String Nickname, String name, String password) throws SQLException{
-        userDAO u = new userDAO();
+        UserDAO u = new UserDAO();
         if(testText(Nickname, NICKNAME_MIN, NICKNAME_MAX)){
-            if(!userDAO.verifyExistence(Nickname)){
+            if(!UserDAO.verifyExistence(Nickname)){
                 System.out.println("yeah");
-                userDAO.saveUser(new User(Nickname, name, password));
+                UserDAO.saveUser(new User(Nickname, name, password));
             }
         }
     }

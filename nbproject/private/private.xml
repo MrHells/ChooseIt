@@ -3,22 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/UserDAO.java</file>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/GameController.java</file>
             <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLLogin.fxml</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/AskDAO.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/controllers/FXMLRegister.java</file>
             <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLMenu.fxml</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/userDAO.java</file>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/ProdutoDAO.java</file>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLLoginController.java</file>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/LoginController.java</file>
             <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/users/User.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/ConectionMaker.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/ConnectionFactory.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/controllers/FXMLDocumentController_Menu.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLRegister.fxml</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/ChooseIt.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/nbproject/jfx-impl.xml</file>
             <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/tools/Login.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/tools/Register.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLDocument_btn.fxml</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/controllers/FXMLLoginController.java</file>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLRegister.fxml</file>
         </group>
     </open-files>
 </project-private>
