@@ -9,21 +9,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import users.User;
 
 /**
  *
- * @author tecnica
+ * @author fhill
  */
-public class userDAO {
+public class UserDAO {
 
     private static Connection con = null;
 
-    public static void saveUser(User user) throws SQLException {
+    public static void saveUser(User user, String password) throws SQLException {
         Connection con = ConnectionFactory.getConnection();
         String sql = "INSERT INTO user (nickname, name, password, how_much_answered) VALUES (?,?,?,?)";
         System.out.println("a");
@@ -34,7 +32,7 @@ public class userDAO {
 
             stmt.setString(1, user.getNickname() );
             stmt.setString(2, user.getName());
-            stmt.setString(3, user.getPassword());
+            stmt.setString(3, password);
             stmt.setInt(4, 0);
             stmt.executeUpdate();
             
@@ -44,20 +42,23 @@ public class userDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }   
     }
-    public String buscarUsuarios(String Nickname, String Pass) {
+    public String[] buscarUsuarios(String Nickname, String Pass) {
         String sql = "SELECT nickname, name, idUser, Password FROM chooseit_database.user WHERE Nickname = '"+Nickname+"' and Password ='"+Pass+"'";
         try {
             con = (new ConnectionFactory()).getConnection();
         } catch (SQLException ex) {
-            Logger.getLogger(userDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         try (PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql)){
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
-                String tipo = rs.getString("Name");
-                tipo += " | " + rs.getString("Nickname");
-                tipo += " | " + rs.getString("idUser");
-                return tipo;
+                String[] data = new String[4];
+                data[0] = rs.getString("name");
+                data[1] = rs.getString("nickname");
+                data[2] = rs.getString("idUser");
+                data[3] = rs.getString("how_much_answered");
+                
+                return data;
             }
 
         } catch (SQLException ex) {
