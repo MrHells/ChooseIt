@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Ask.Ask;
 import users.User;
 
 /**
@@ -20,25 +21,27 @@ import users.User;
 public class AskDAO {
     private static Connection con = null;
 
-    public static void saveAsk(User user) throws SQLException {
+    public static void saveAsk(Ask ask) throws SQLException {
         Connection con = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO ask (statement, ) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO ask(statement, conditions, yesQuant, notQuant, id_creator) VALUES (?,?,?,?,?)";
         System.out.println("a");
         PreparedStatement stmt = null;
         try {
             stmt = (PreparedStatement) con.prepareStatement(sql);
-            stmt.setString(1, user.getNickname() );
-            stmt.setString(2, user.getName());
-            stmt.setString(3, user.getPassword());
+            stmt.setString(1, ask.getStatement());
+            stmt.setString(2, ask.getConditions());
+            stmt.setInt(3, 0);
             stmt.setInt(4, 0);
-            stmt.executeUpdate();
+            stmt.setInt(5, ask.getIdCreator());
             
+            stmt.executeUpdate();
         } catch (SQLException ex) {
             System.err.println("Erro " + ex);
         } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }   
     }
+    
     public String buscarUsuarios(String Nickname, String Pass) {
         String sql = "SELECT nickname, name, idUser, Password FROM chooseit_database.user WHERE Nickname = '"+Nickname+"' and Password ='"+Pass+"'";
         try {

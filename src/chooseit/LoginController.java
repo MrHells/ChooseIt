@@ -16,6 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.InputMethodEvent;
 import tools.Login;
+import users.User;
 
 /**
  * FXML Controller class
@@ -25,29 +26,25 @@ import tools.Login;
 public class LoginController implements Initializable {
 
     @FXML
-    private Button login;
-    @FXML
     private TextField txtNickname;
-    @FXML
     private PasswordField txtPass;
+    @FXML
+    private PasswordField ptxtPass;
 
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-
+    public void initialize(URL url, ResourceBundle rb){
+    }
+    
     @FXML
     public  void tryLogin(ActionEvent event) {
-        //System.out.println(txtNickname.getText());
-        Login.tryLogin(txtPass.getText(), txtNickname.getText());
+        System.out.println(ptxtPass.getText());
+        
+        User user = Login.tryLogin(ptxtPass.getText(), txtNickname.getText());
+        System.out.println(user.toString());
     }
 
-    @FXML
-    private void verifyText(InputMethodEvent event) {
-        
-    }
     
 }

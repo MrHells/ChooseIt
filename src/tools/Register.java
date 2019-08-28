@@ -11,7 +11,7 @@ import users.User;
 
 /**
  *
- * @author Emili
+ * @author Fhill
  */
 public class Register {
     private static final int NAME_MAX = 20;
@@ -24,7 +24,7 @@ public class Register {
         if(testText(Nickname, NICKNAME_MIN, NICKNAME_MAX)){
             if(!UserDAO.verifyExistence(Nickname)){
                 System.out.println("yeah");
-                UserDAO.saveUser(new User(Nickname, name, password));
+                UserDAO.saveUser(new User(Nickname, name), password);
             }
         }
     }

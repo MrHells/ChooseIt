@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author tecnica
+ * @author fhill
  */
 public class ConnectionFactory {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";

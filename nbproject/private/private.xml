@@ -4,15 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/UserDAO.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/GameController.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLLogin.fxml</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLMenu.fxml</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/ProdutoDAO.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLLoginController.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/LoginController.java</file>
             <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/users/User.java</file>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/ConectionMaker.java</file>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/MenuController.java</file>
             <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/tools/Login.java</file>
-            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/chooseit/FXMLRegister.fxml</file>
+            <file>file:/C:/Users/fhill/OneDrive/Documentos/NetBeansProjects/ChooseItChooseIt/mandar/src/databases/ConnectionFactory.java</file>
         </group>
     </open-files>
 </project-private>

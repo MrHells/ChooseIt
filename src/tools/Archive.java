@@ -18,7 +18,7 @@ import users.User;
 
 /**
  *
- * @author Emili
+ * @author Fhill
  */
 public class Archive {
     	public static void write(Object obj, String fileName) {
