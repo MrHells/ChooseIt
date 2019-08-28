@@ -18,9 +18,9 @@ import users.User;
  * @author fhill
  */
 public class UserDAO {
-
+    
     private static Connection con = null;
-
+    
     public static void saveUser(User user, String password) throws SQLException {
         Connection con = ConnectionFactory.getConnection();
         String sql = "INSERT INTO user (nickname, name, password, how_much_answered) VALUES (?,?,?,?)";
@@ -43,7 +43,7 @@ public class UserDAO {
         }   
     }
     public String[] buscarUsuarios(String Nickname, String Pass) {
-        String sql = "SELECT nickname, name, idUser, Password FROM chooseit_database.user WHERE Nickname = '"+Nickname+"' and Password ='"+Pass+"'";
+        String sql = "SELECT nickname, name, idUser, Password, how_much_answered FROM chooseit_database.user WHERE Nickname = '"+Nickname+"' and Password ='"+Pass+"'";
         try {
             con = (new ConnectionFactory()).getConnection();
         } catch (SQLException ex) {
@@ -66,7 +66,6 @@ public class UserDAO {
         }
         return null;
     }
-    
     public static boolean verifyExistence(String Nickname) throws SQLException{
         String sql = "SELECT Nickname FROM chooseit_database.user WHERE Nickname = '"+Nickname+"'";
         boolean r = false;
@@ -75,14 +74,12 @@ public class UserDAO {
         } catch (SQLException ex) {
              System.err.println("Erro " + ex);
         }
-        
         try (PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql)){
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){ 
                 System.out.println("I");
                 return true;
             }
-            
         } catch (SQLException ex) {
             System.err.println(ex);
         }

@@ -38,7 +38,7 @@ public class MenuController implements Initializable {
     private Button btnLogin, btnRegister, btnStart;
     @FXML
     private Button btnBDC;
-    
+    User user = null;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         btnBDC.setTooltip(new Tooltip("Testa conexão"));
@@ -78,6 +78,18 @@ public class MenuController implements Initializable {
 
     @FXML
     private void start(ActionEvent event) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("FXMLGame.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     @FXML
