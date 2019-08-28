@@ -10,38 +10,34 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import tools.Login;
-import users.User;
 
 /**
  * FXML Controller class
  *
  * @author fhill
  */
-public class LoginController implements Initializable {
+public class QuestionsCreationController implements Initializable {
 
     @FXML
-    private TextField txtNickname;
-    private PasswordField txtPass;
+    private Button btnSubmit;
     @FXML
-    private PasswordField ptxtPass;
+    private TextField txtStatement;
+    @FXML
+    private TextField txtCondition;
 
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb){
-    }
-    
-    @FXML
-    public  void tryLogin(ActionEvent event) {
-        System.out.println(ptxtPass.getText());
-        User user = Login.tryLogin(ptxtPass.getText(), txtNickname.getText());
-        
-        System.out.println(user.toString());
-    }
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
 
+    @FXML
+    private void submit(ActionEvent event) {
+        
+    }
     
 }

@@ -38,7 +38,7 @@ public class MenuController implements Initializable {
     private Button btnLogin, btnRegister, btnStart;
     @FXML
     private Button btnBDC;
-    User user = null;
+    static User user = null;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         btnBDC.setTooltip(new Tooltip("Testa conexão"));
