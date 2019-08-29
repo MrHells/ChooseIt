@@ -5,6 +5,7 @@
  */
 package chooseit;
 
+import databases.AskDAO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +17,8 @@ import javafx.stage.Stage;
  *
  */
 public class ChooseIt extends Application {
-
+    public static AskDAO askDao = new AskDAO();
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLMenu.fxml"));
