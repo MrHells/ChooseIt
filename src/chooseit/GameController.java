@@ -5,25 +5,20 @@
  */
 package chooseit;
 
-import databases.ConnectionFactory;
-import databases.UserDAO;
+import Ask.Ask;
+import static chooseit.MenuController.user;
+import databases.AskDAO;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
-import static chooseit.ChooseIt.askDao;
 
 /**
  * FXML Controller class
@@ -31,62 +26,42 @@ import static chooseit.ChooseIt.askDao;
  * @author fhill
  */
 public class GameController implements Initializable {
-
+    private AskDAO askDao = new AskDAO();
+    List<Ask> asks;
     @FXML
-    private Circle btnChoose;
-    private static Connection con = null;
-    @FXML
-    private TextField btnStatement;
-    @FXML
-    private TextField btnCondition;
+    private Button btnYes;
     @FXML
     private Button btnNot;
-
+    @FXML
+    private TextField txtStatement, txtCondition;
+    @FXML
+    private Circle btnChoose;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            place_statement();
-            place_condition();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }    
-    
-    public void place_statement() throws SQLException{
-        String statement = askDao.find_statement();
-        btnStatement.setText(statement); 
+        setValues();
     }
-    
-    public void place_condition() throws SQLException{
-        String condition = askDao.find_condition();
-        btnCondition.setText(condition);
+    public void setValues(){
+        asks  = askDao.searchAsk(user.getId());
     }
-
     @FXML
     private void btnChoose_clicked(MouseEvent event) throws SQLException {
         boolean button_clicked = true;
         save_answer(button_clicked);
     }
-    
     @FXML
     private void btnNot_clicked(ActionEvent event) throws SQLException {
         boolean button_clicked = false;
         save_answer(button_clicked);
     }
-    
-     public void save_answer(boolean button_pressed) throws SQLException{
-        if (button_pressed){
+    public void save_answer(boolean button_pressed) throws SQLException {
+        System.out.println("( ͡° ͜ʖ ͡°)-");
+        if (button_pressed) {
             askDao.save_answer_yes();
-        }else {
+        } else {
             askDao.save_answer_no();
         }
     }
-    
-   
 }
-
