@@ -45,7 +45,6 @@ public class MenuController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         btnBDC.setTooltip(new Tooltip("Testa conexão"));
     }
-
     @FXML
     private void logar(ActionEvent event) {
         Parent root;
@@ -87,7 +86,6 @@ public class MenuController implements Initializable {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
-
         } catch (IOException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -98,9 +96,20 @@ public class MenuController implements Initializable {
     private void bdC(ActionEvent event) throws SQLException {
         ConectionMaker.getConexao();
     }
-
     @FXML
     private void createDillema(ActionEvent event) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("FXMLQuestionsCreation.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
     
 }
