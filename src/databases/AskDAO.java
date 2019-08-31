@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Ask.Ask;
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.util.ArrayList;
 import java.util.List;
 import users.User;
@@ -44,8 +45,8 @@ public class AskDAO {
 
     public void save_answer_no() throws SQLException {
         Connection con = ConnectionFactory.getConnection();
-        String sql = "UPDATE ask \n"
-                + "SET notQuant = notQuant + 1\n"
+        String sql = "UPDATE ask "
+                + "SET notQuant = notQuant + 1 "
                 + "WHERE idAsk = 1;";
         PreparedStatement stmt = null;
 
@@ -58,6 +59,7 @@ public class AskDAO {
         } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }
+
     }
 
     public static void saveAsk(Ask ask) throws SQLException {
@@ -82,30 +84,58 @@ public class AskDAO {
     }//( ͡° ͜ʖ ͡°)
 
     public List<Ask> searchAsk(int idUser) {
-        String sql = "SELECT statement, conditions, yesQuant, notQuant FROM ask LEFT JOIN answer using(idAsk);";
-        List<Ask> asks = new ArrayList(); 
+        String sqlLeft = "SELECT statement, conditions, yesQuant, notQuant, idAsk, answer.idUser FROM ask JOIN answer using(idAsk) where idUser = '" + idUser + "' group by idAsk";
+        String sqlInner = "SELECT statement, conditions, yesQuant, notQuant,idAsk FROM ask";
+
+        List<Ask> allAsks = new ArrayList();
+        List<Ask> onlyAskedAsks = new ArrayList();
         try {
             con = (new ConnectionFactory()).getConnection();
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        try (PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql)) {
+        try (PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sqlLeft); PreparedStatement stmt2 = (PreparedStatement) con.prepareStatement(sqlInner)) {
             ResultSet rs = stmt.executeQuery();
+            ResultSet rs2 = stmt2.executeQuery();
+            String[] data = new String[5];
             while (true) {
+
                 if (rs.next()) {
-                    String[] data = new String[4];
-                    data[0] = rs.getString("statement");
-                    data[1] = rs.getString("conditions");
-                    data[2] = rs.getString("yesQuant");
-                    data[3] = rs.getString("notQuant");
-                    asks.add(new Ask(data[0], data[1], idUser, Integer.parseInt(data[2]), Integer.parseInt(data[3])));
-                }else{
-                    return asks;
+                    System.out.println(rs.getString("idAsk") + " AAA " + rs.getInt("idAsk"));
+
+                    Ask s = new Ask(rs.getString("statement"), rs.getString("conditions"), rs.getInt("yesQuant"), rs.getInt("notQuant"), 0, rs.getInt("idAsk"));
+                    System.out.println(s.getIdAsk());
+
+                    onlyAskedAsks.add(s);
+                } else if (rs2.next()) {
+                    System.out.println(rs2.getString("idAsk") + " AAA " + rs2.getInt("idAsk"));
+
+                    Ask s = new Ask(rs2.getString("statement"), rs2.getString("conditions"), rs2.getInt("yesQuant"), rs2.getInt("notQuant"),0, rs2.getInt("idAsk"));
+                    System.out.println(s.getIdAsk());
+
+                    allAsks.add(s);
+                } else {
+                    List<Ask> finalList = new ArrayList<Ask>();
+                    for (Ask askAll : allAsks) {
+                        int count = 0;
+                        System.out.println(askAll.getIdAsk() + " AAAAAAAAAAAAAAA");
+                        for (Ask onlyAsked : onlyAskedAsks) {
+                            System.out.println(askAll.getIdAsk() + " | " + onlyAsked.getIdAsk());
+                            if (askAll.getIdAsk() == onlyAsked.getIdAsk()) {
+                                count += 1;
+                            }
+                        }
+                        if (count == 0) {
+                            finalList.add(askAll);
+                        }
+                    }
+                    return finalList;
                 }
+
             }
 
         } catch (SQLException ex) {
-            System.err.println("Erro " + ex);
+            System.err.println(ex);
         }
         return null;
     }
@@ -118,14 +148,12 @@ public class AskDAO {
         } catch (SQLException ex) {
             System.err.println("Erro " + ex);
         }
-
         try (PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql)) {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 System.out.println("I");
                 return true;
             }
-
         } catch (SQLException ex) {
             System.err.println(ex);
         }

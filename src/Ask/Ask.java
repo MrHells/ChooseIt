@@ -10,6 +10,7 @@ package Ask;
  * @author fhill
  */
 public class Ask {
+
     private int idAsk;
     private String statement;
     private String conditions;
@@ -17,6 +18,22 @@ public class Ask {
     private int notQuant;
     private int idCreator;
 
+    public Ask(String statement, String conditions, int yesQuant, int notQuant, int idCreator, int idAsk) {
+        this.statement = statement;
+        this.conditions = conditions;
+        this.yesQuant = yesQuant;
+        this.notQuant = notQuant;
+        this.idCreator = idCreator;
+        this.idAsk = idAsk;
+    }
+
+    public Ask(String statement, String conditions, int yesQuant, int notQuant) {
+        this.statement = statement;
+        this.conditions = conditions;
+        this.yesQuant = yesQuant;
+        this.notQuant = notQuant;
+    }
+    
     public int getIdCreator() {
         return idCreator;
     }
@@ -24,7 +41,7 @@ public class Ask {
     public void setIdCreator(int idCreator) {
         this.idCreator = idCreator;
     }
-    
+
     public int getIdAsk() {
         return idAsk;
     }

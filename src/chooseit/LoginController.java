@@ -5,6 +5,7 @@
  */
 package chooseit;
 
+import static chooseit.MenuController.user;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -38,7 +39,7 @@ public class LoginController implements Initializable {
     @FXML
     public  void tryLogin(ActionEvent event) {
         System.out.println(ptxtPass.getText());
-        User user = Login.tryLogin(ptxtPass.getText(), txtNickname.getText());
+        user = Login.tryLogin(ptxtPass.getText(), txtNickname.getText());
         
         System.out.println(user.toString());
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.paint.*?>
@@ -12,16 +13,18 @@
 
 <AnchorPane id="AnchorPane" prefHeight="409.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.GameController">
    <children>
-      <TextField fx:id="txtStatement" layoutX="14.0" layoutY="24.0" prefHeight="98.0" prefWidth="254.0" />
-      <Label layoutX="339.0" layoutY="63.0" text="BUT" />
-      <TextField fx:id="txtCondition" layoutX="449.0" layoutY="24.0" prefHeight="98.0" prefWidth="254.0" />
-      <Button fx:id="btnNot" layoutX="330.0" layoutY="364.0" mnemonicParsing="false" onAction="#btnNot_clicked" text="NO" />
-      <Button fx:id="btnYes" layoutX="246.0" layoutY="134.0" mnemonicParsing="false" onAction="#btnChoose_clicked" prefHeight="216.0" prefWidth="216.0" text="Button" />
-      <Circle fx:id="btnChoose" fill="#c90808" layoutX="354.0" layoutY="242.0" onMouseClicked="#btnChoose_clicked" radius="100.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="8.0" />
-      <Label layoutX="307.0" layoutY="200.0" prefHeight="83.0" prefWidth="93.0" text="YES" textAlignment="CENTER">
-         <font>
-            <Font name="Consolas Bold" size="56.0" />
-         </font>
-      </Label>
+      <TextField fx:id="txtStatement" layoutX="14.0" layoutY="24.0" prefHeight="134.0" prefWidth="303.0" />
+      <Label layoutX="152.0" layoutY="194.0" text="BUT" />
+      <TextField fx:id="txtCondition" layoutX="14.0" layoutY="246.0" prefHeight="134.0" prefWidth="303.0" />
+      <Button fx:id="btnNot" layoutX="568.0" layoutY="336.0" mnemonicParsing="false" onAction="#btnNot_clicked" text="NO" />
+      <ImageView fitHeight="217.0" fitWidth="205.0" layoutX="487.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../boto.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnYes" layoutX="487.0" layoutY="86.0" mnemonicParsing="false" onAction="#btnYes_clicked" opacity="0.0" prefHeight="217.0" prefWidth="205.0" rotate="180.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>

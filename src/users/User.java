@@ -24,6 +24,7 @@ public class User implements Serializable {
         this.Nickname = Nickname;
         this.name = name;
         this.id = id;
+        System.out.println(id);
         this.numberOfAnswers = numberOfAnswers;
     }
     public String getName() {
@@ -37,6 +38,22 @@ public class User implements Serializable {
     }
     public void setNickname(String Nickname) {
         this.Nickname = Nickname;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getNumberOfAnswers() {
+        return numberOfAnswers;
+    }
+
+    public void setNumberOfAnswers(int numberOfAnswers) {
+        this.numberOfAnswers = numberOfAnswers;
     }
 
     @Override

@@ -44,7 +44,7 @@ public class QuestionsCreationController implements Initializable {
     @FXML
     private void submit(ActionEvent event) {
         try {
-            AskDAO.saveAsk(new Ask(txtStatement.getText(), txtCondition.getText(), 0, 0, user.getId()));
+            AskDAO.saveAsk(new Ask(txtStatement.getText(), txtCondition.getText(), 0, 0, user.getId(), 0));
         } catch (SQLException ex){
             Logger.getLogger(QuestionsCreationController.class.getName()).log(Level.SEVERE, null, ex);
         }
