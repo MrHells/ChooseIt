@@ -10,23 +10,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="387.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.GameController">
+<AnchorPane id="AnchorPane" prefHeight="409.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.GameController">
    <children>
-      <Circle fx:id="btnChoose" layoutX="341.0" layoutY="122.0" onMouseClicked="#btnChoose_clicked" radius="100.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="8.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="#1fd4ff" />
-                  <Stop color="#f8ff74" offset="0.9961685823754789" />
-                  <Stop color="#f8ff74" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Circle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="121.0" layoutX="14.0" layoutY="243.0" stroke="BLACK" strokeType="INSIDE" width="276.0" />
-      <TextField fx:id="btnStatement" layoutX="25.0" layoutY="255.0" prefHeight="98.0" prefWidth="254.0" />
-      <Label layoutX="339.0" layoutY="283.0" text="BUT" />
-      <TextField fx:id="btnCondition" layoutX="415.0" layoutY="283.0" prefHeight="53.0" prefWidth="183.0" />
-      <Button fx:id="btnNot" layoutX="330.0" layoutY="336.0" mnemonicParsing="false" onAction="#btnNot_clicked" text="Não" />
+      <TextField fx:id="txtStatement" layoutX="14.0" layoutY="24.0" prefHeight="98.0" prefWidth="254.0" />
+      <Label layoutX="339.0" layoutY="63.0" text="BUT" />
+      <TextField fx:id="txtCondition" layoutX="449.0" layoutY="24.0" prefHeight="98.0" prefWidth="254.0" />
+      <Button fx:id="btnNot" layoutX="330.0" layoutY="364.0" mnemonicParsing="false" onAction="#btnNot_clicked" text="NO" />
+      <Button fx:id="btnYes" layoutX="246.0" layoutY="134.0" mnemonicParsing="false" onAction="#btnChoose_clicked" prefHeight="216.0" prefWidth="216.0" text="Button" />
+      <Circle fx:id="btnChoose" fill="#c90808" layoutX="354.0" layoutY="242.0" onMouseClicked="#btnChoose_clicked" radius="100.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="8.0" />
+      <Label layoutX="307.0" layoutY="200.0" prefHeight="83.0" prefWidth="93.0" text="YES" textAlignment="CENTER">
+         <font>
+            <Font name="Consolas Bold" size="56.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
