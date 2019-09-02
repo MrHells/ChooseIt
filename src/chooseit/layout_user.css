@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02/09/2019, 12:42:48
+    Author     : 05200246
+*/
+
+
+* {
+    primary-color: #607D8B; 
+    secondary-color : #3680e1; 
+    secondary-color-dark : #134381;
+    primary-text-color : #f2f2f2;
+    secondary-text-color : #757575;
+}
+
+.root{
+    -fx-background-color: primary-color;
+}
+
+.button{
+    -fx-text-fill: primary-text-color
+}
+
+.login-button{
+    -fx-background-color: secondary-color;
+    -fx-border-radius: 100;
+    -fx-background-radius: 100;
+}
+
+.login-button:hover{
+    -fx-background-color: secondary-color-dark;
+    -fx-text-fill: primary-text-color;
+}
+
+
+.text-field
+{
+    -fx-text-fill: secondary-text-color;
+    -fx-font: 16px "Arial";
+    -jfx-focus-color: secondary-color;
+}

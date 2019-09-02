@@ -8,7 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="465.0" prefWidth="354.0" style="-fx-border-color: black;" stylesheets="@layout.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.MenuController">
+<AnchorPane id="AnchorPane" prefHeight="465.0" prefWidth="354.0" style="-fx-border-color: black;" stylesheets="@layout_menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.MenuController">
     <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="82.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>

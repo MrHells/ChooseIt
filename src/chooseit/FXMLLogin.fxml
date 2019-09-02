@@ -4,12 +4,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="217.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="217.0" prefWidth="386.0" stylesheets="@layout_user.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chooseit.LoginController">
    <children>
-      <Button layoutX="291.0" layoutY="159.0" mnemonicParsing="false" onAction="#tryLogin" prefHeight="44.0" prefWidth="81.0" text="Login" />
+      <Button layoutX="113.0" layoutY="159.0" mnemonicParsing="false" onAction="#tryLogin" prefHeight="44.0" prefWidth="81.0" styleClass="login-button" text="Login" />
       <TextField fx:id="txtNickname" layoutX="10.0" layoutY="14.0" prefHeight="31.0" prefWidth="367.0" promptText="Nickname" />
       <PasswordField fx:id="ptxtPass" layoutX="10.0" layoutY="53.0" prefHeight="31.0" prefWidth="367.0" promptText="Password" />
    </children>
 </AnchorPane>
- 
