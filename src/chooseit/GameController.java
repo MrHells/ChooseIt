@@ -18,6 +18,8 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -72,6 +74,7 @@ public class GameController implements Initializable {
         try {
             save_answer(button_clicked);
             AnswerDAO.saveAnswer(user.getId(), actualAsk.getIdAsk());
+            pop_alert();
         } catch (SQLException ex) {
             Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -106,4 +109,39 @@ public class GameController implements Initializable {
             askDao.save_answer_no();
         }
     }
+    
+    public void pop_alert(){
+        float result = get_percentage_yes(); 
+        
+        if (result != 1000){
+      
+        String percentage_yes = (Float.toString(Math.round(result)));
+        String percentage_no = (Float.toString(100 - Math.round(result)));
+       
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText("%" + percentage_yes + " das pessoas apertaram o botão \n"
+                            + "%" + percentage_no + " Não apertaram");
+        alert.showAndWait();
+        
+        } else{
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Look, an Information Dialog");
+            alert.setContentText("Você foi o primeiro a responder!");
+            alert.showAndWait();
+        }
+    }
+    
+    public float get_percentage_yes(){  
+        float total = (actualAsk.getNotQuant() + actualAsk.getYesQuant());
+        if (total > 0){
+            float result = ((actualAsk.getYesQuant() / total) * 100); 
+            return result;
+        } else {
+            return 1000;
+        }
+    }
+    
 }
