@@ -36,14 +36,12 @@ public class MenuController implements Initializable {
 
     @FXML
     private Button btnLogin, btnRegister, btnStart;
-    @FXML
     private Button btnBDC;
     static User user = null;
     @FXML
     private Button btnDillema;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        btnBDC.setTooltip(new Tooltip("Testa conexão"));
     }
     @FXML
     private void logar(ActionEvent event) {
@@ -92,10 +90,7 @@ public class MenuController implements Initializable {
 
     }
 
-    @FXML
-    private void bdC(ActionEvent event) throws SQLException {
-        ConectionMaker.getConexao();
-    }
+    
     @FXML
     private void createDillema(ActionEvent event) {
         Parent root;
