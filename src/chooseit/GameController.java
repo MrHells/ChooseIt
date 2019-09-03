@@ -15,12 +15,15 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
@@ -39,9 +42,10 @@ public class GameController implements Initializable {
     @FXML
     private Button btnNot;
     @FXML
-    private TextField txtStatement, txtCondition;
     private Ask actualAsk;
     private int max, now;
+    @FXML
+    private TextArea txtStatement, txtCondition;
 
     /**
      * Initializes the controller class.
@@ -49,8 +53,10 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         getValues();
-        actualAsk = asks.get(0);
-        max = asks.size();
+        if (!asks.isEmpty()) {
+            actualAsk = asks.get(0);
+            max = asks.size();
+        }
         now = 0;
         setValues();
     }
