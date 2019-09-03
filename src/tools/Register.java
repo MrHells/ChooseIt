@@ -7,6 +7,7 @@ package tools;
 
 import databases.UserDAO;
 import java.sql.SQLException;
+import static tools.AlertSpawnOnly.create_alert;
 import users.User;
 
 /**
@@ -21,15 +22,21 @@ public class Register {
     
     public static void registerUser(String Nickname, String name, String password) throws SQLException{
         UserDAO u = new UserDAO();
-        if(testText(Nickname, NICKNAME_MIN, NICKNAME_MAX)){
+        if(testText(Nickname, NICKNAME_MIN, NICKNAME_MAX) && testText(name, NAME_MIN, NAME_MAX)){
             if(!UserDAO.verifyExistence(Nickname)){
                 System.out.println("yeah");
                 UserDAO.saveUser(new User(Nickname, name), password);
+                create_alert("YOW", name + " are a pretty name...", "Successfully Registered");
+            }else{
+                create_alert("This NICK?", "Someone already use this nickname.", "Try another nickname.");
             }
+        }else{
+            create_alert("Oh no", "Too much character, or too less characters.", "Try changing");
         }
     }
     public static boolean testText(String text, int minCharacter, int maxCharacter){
         if(!testEspecialCharacteres(text)){
+            create_alert("Not suitable", "Some text may have some not good characters.", "Especial characteres detected!");
             return false;
         }
         return text.length() <= maxCharacter &&  text.length() >= minCharacter;

@@ -22,7 +22,7 @@ public class AnswerDAO {
     public static void saveAnswer(int idUser, int idAsk) throws SQLException {
         System.out.println(idAsk);
         Connection con = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO answer(idUser, idAsk, whenAnsered) VALUES (?,?,NOW())";
+        String sql = "INSERT INTO answer(idUser, idAsk, whenAnswered) VALUES (?,?,NOW())";
         System.out.println("a");
         PreparedStatement stmt = null;
         try {

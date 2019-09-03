@@ -11,15 +11,12 @@ import databases.AskDAO;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import tools.Archive;
-import users.User;
+import tools.AlertSpawnOnly;
 
 /**
  * FXML Controller class
@@ -44,9 +41,13 @@ public class QuestionsCreationController implements Initializable {
     @FXML
     private void submit(ActionEvent event) {
         try {
-            AskDAO.saveAsk(new Ask(txtStatement.getText(), txtCondition.getText(), 0, 0, user.getId(), 0));
+            if(user == null){
+                AlertSpawnOnly.create_alert("Sorry bb", "I love you, but I could love much more if you login.", "Try logging into the game, or creating an account if you does not have one yet.");
+            }else{
+                AskDAO.saveAsk(new Ask(txtStatement.getText(), txtCondition.getText(), 0, 0, user.getId(), 0));
+            }
         } catch (SQLException ex){
-            Logger.getLogger(QuestionsCreationController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
     }
 }

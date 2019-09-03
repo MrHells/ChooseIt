@@ -6,10 +6,8 @@
  */
 package chooseit;
     
-import databases.ConectionMaker;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,12 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
 import javafx.stage.Stage;
-import tools.Login;
-import tools.Register;
 import users.User;
 
 /**

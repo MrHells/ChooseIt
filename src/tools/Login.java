@@ -16,7 +16,9 @@ public class Login {
     public static User tryLogin(String senha, String Nickname){
         UserDAO u = new UserDAO();
         String[] a = u.buscarUsuarios(Nickname, senha);
-
+        if(a == null){
+            AlertSpawnOnly.create_alert("Bah", "This user really doesn't exist... ", "Nickname or password may be wrong!");
+        }
         return new User(Nickname, a[0], Integer.parseInt(a[2]), Integer.parseInt(a[3]));
     }
 }
